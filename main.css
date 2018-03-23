@@ -26,7 +26,28 @@ body {
 		-moz-border-radius:    20px;
   		-webkit-border-radius: 20px;
    		border-radius:         20px;
+   		display: flex;
 		/*just to see the outter div*/
 }
+.wrapper {	
+	display: inline-flex;
+	flex-direction: row;
+	margin-left: 10px;
+}
+#screen2{
+	background-color: blue;
+	float:left;
+	height: 300px;
+	width: 45%;
+	margin-left:30px;
+}
 
-
+#pic {
+	margin-top: 150px;
+	margin-left: 5px;
+	height: 450px;
+	width:50%;
+}
+.spacediv {
+	margin-left: 30px;
+}
