@@ -26,7 +26,8 @@ body {
 		-moz-border-radius:    20px;
   		-webkit-border-radius: 20px;
    		border-radius:         20px;
-   		display: flex;
+		display: flex;
+		position: absolute;   
 		/*just to see the outter div*/
 }
 .wrapper {	
@@ -37,17 +38,29 @@ body {
 #screen2{
 	background-color: blue;
 	float:left;
-	height: 300px;
-	width: 45%;
-	margin-left:30px;
+	height: 250px;
+	width: 40%;
+	margin-left:130px;
+	margin-top: 10px;
 }
 
 #pic {
-	margin-top: 150px;
-	margin-left: 5px;
-	height: 450px;
-	width:50%;
+	margin-top: 180px;
+	margin-left: 50px;
+	height: 300px;
+	width:38%;
 }
 .spacediv {
 	margin-left: 30px;
+}
+#gifcontainer {
+	display:flex;
+	justify-content: center;
+}
+.gify {
+	height: 100px;
+	width: 75px;
+}
+.gifypadding {
+	padding: 0px 30px 0px 30px;
 }
