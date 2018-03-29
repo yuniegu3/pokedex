@@ -1,45 +1,94 @@
+@mixin roundbox($width, $height,$border-radius,$background-color){
+    width: $width;
+    height: $height;
+    -moz-border-radius: $border-radius;
+    -webkit-border-radius: $border-radius;
+     border-radius: $border-radius;
+     background-color: $background-color;
+  }
+@mixin circle($width, $height, $border-radius){
+    width: $width;
+    height: $height;
+    -moz-border-radius: $border-radius;
+    -webkit-border-radius: $border-radius;
+     border-radius: $border-radius;
+}
+
+#blackspacediv {
+    height: 603px;
+    width: 50px;
+    background-color: black;
+    position: absolute;
+    left:700px;
+    z-index: -5;
+}
 #pokedex {
-    background-color: $main-pokedex-color;
+    @include roundbox(70%, 600px, 20px, $main-pokedex-color);
+    border: 3px solid black;
     box-shadow:
     0 10px 50px 0px $main-pokedex-shadow;
-    height: 600px;
-    width: 70%;
     margin-left: 15%;
-    border-top: 13px solid transparent;
-    border-bottom: 13px solid transparent;
-    -moz-border-radius:    20px;
-      -webkit-border-radius: 20px;
-       border-radius:         20px;
     display: flex;
     position: absolute;   
     z-index: -10;
     #lens {
-        width: 120px;
-        height: 120px;
-        background: $white-color;
-        -moz-border-radius: 50%;
-        -webkit-border-radius: 50%;
-        border-radius: 50%;
+        @include circle(100px, 100px, 50%);
+        background: $lens-glow-color;
         position: absolute;
-        top: 10px;
+        top: 15px;
         left:20px;
         box-shadow:
-        0 0 10px 5px $white-color,
+        0 0 10px 5px $lens-glow-color,
         inset -10px 0 20px $lens-color,
         10px 0 40px $lens-color; 
+        z-index: -9;
+    }
+    #smallButton1 {
+        @include circle(30px, 30px, 50%);
+        background: green;
+        box-shadow:
+        inset 0 0 10px #172B02;
+        position: absolute;
+        top:110px;
+        left:300px;
+        border:1px solid black;
+        z-index: -8;
+    }  
+     #smallButton2 {
+        @include circle(30px, 30px, 50%);
+        background: green;
+        box-shadow:
+        inset 0 0 10px #172B02;
+        position: absolute;
+        top:110px;
+        left:150px;
+        border:1px solid black;
         z-index: -8;
     }
-        #pic {
+}
+#imgscreen {
+    height: 400px;
+    width:400px;
+    background-color:$image-screen-color;
+    box-shadow:
+    inset 10px 10px 100px #404145;
+    position: absolute;
+    bottom:25px;
+    left:35px;
+    z-index: -10;
+}
+
+#pic {
         margin-top: 250px;
-        margin-left: 50px;
+        margin-left: 43px;
         height: 300px;
         width:38%;
         position: absolute;
-        z-index: 999;
+        z-index: 10;
     }
-}
-#screen2{
-    background-color: $blue-screen-color;
+
+#textscreen{
+    background-color: $text-screen-color;
     -moz-border-radius:    15px;
     -webkit-border-radius: 15px;
      border-radius:         15px;
@@ -47,7 +96,7 @@
     height: 250px;
     width: 40%;
     margin-left:150px;
-    margin-top: 10px;
+    margin-top: 20px;
     position: relative;
     left:430px;
     z-index: 0;
