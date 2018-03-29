@@ -33,6 +33,7 @@ let trainerHugo = new MyTrainer();
 
 
 
+
 // console.log(trainerHugo)
 
 // trainerHugo.displayAll()
@@ -116,6 +117,7 @@ $('#clickgrowlithe').click(function(){
 		$('#hpstat').text(data.hpstat);
 		$('#defstat').text(data.defstat);
 		$('#atkstat').text(data.atkstat);
+//think i could of gotten a function to go through the abilities since there might be pokemon that has more then 3 abilities
 		let abili = (data.abilities[0].ability.name);
 		let abili2 = (data.abilities[1].ability.name);
 		let abili3 = (data.abilities[2].ability.name);
@@ -155,7 +157,6 @@ $('#clickabsol').click(function(){
 
 $('#clickall').click(function(){
 	trainerHugo.displayAll()
-	console.log('I am pressed')
 });
 
 

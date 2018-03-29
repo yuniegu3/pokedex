@@ -1,0 +1,11 @@
+#gifcontainer {
+	display:flex;
+    justify-content: center;
+    .gifypadding {
+    padding: 0px 30px 0px 30px;
+        .gify {
+    	height: 100px;
+        width: 75px;
+        }
+    }
+}
