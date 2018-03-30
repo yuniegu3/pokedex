@@ -2,6 +2,7 @@
 $( document ).ready(function() {
 	console.log( "ready!" );
 
+// my blueprint for pokemon
 class Pokemon {
 	constructor(pokname, hpstat, defstat, atkstat, abilities) {
 		this.obj ={
@@ -14,30 +15,27 @@ class Pokemon {
 	}
 	returnData() {return this.obj}
 };
+// blueprint for trainer
 class MyTrainer {
 	constructor(){
 		this.pokemons = []
 	}
-  
+  // this is adding my pokemon to my trainer
 add(pokemon) {
   this.pokemons.push(pokemon)
 }
-
+// will display all of my pokemon added to my trainer
 displayAll() {
   for(let i = 0; i < this.pokemons.length; ++i) {
 	console.log(this.pokemons[i])
   }
 }
 }
+
+//declared my trainer
 let trainerHugo = new MyTrainer();
 
-
-
-
-// console.log(trainerHugo)
-
-// trainerHugo.displayAll()
-
+// ajax calls function for my 3 pokemon
 let callGrowlithe = function(callback){
 	let pic = $('#pic').attr('src', 'images/growlithe.png')
 	$.ajax({
@@ -60,7 +58,7 @@ let callGrowlithe = function(callback){
 		// let abili3 = (data.abilities[2].ability.name);
 		// $('#ability').text(abili + ' ' +  abili2 + ' ' + abili3);
 		let growlithe = new Pokemon(pokname, hpstat, defstat, atkstat, abilities);
-		return callback(growlithe.returnData());
+		return  callback(growlithe.returnData());
 	}, 
 	error:function(error){
 		console.log('There seems to be an error')
@@ -87,7 +85,6 @@ let callGrowlithe = function(callback){
  	}
  	})
  };
-
  let callAbsol = function(callback){
  	let pic = $('#pic').attr('src', 'images/absol.png')
  	$.ajax({
@@ -109,7 +106,9 @@ let callGrowlithe = function(callback){
  	})
  }
 
-
+//the call function for growlithe with event click
+// also adds the pokemon to the trainer Hugo
+//also the text will change according to the data received.
 $('#clickgrowlithe').click(function(){
 	callGrowlithe(function(data){
 		trainerHugo.add(data)
@@ -122,7 +121,7 @@ $('#clickgrowlithe').click(function(){
 		let abili2 = (data.abilities[1].ability.name);
 		let abili3 = (data.abilities[2].ability.name);
 		$('#ability').text(abili + ' ' +  abili2 + ' ' + abili3);
-	});
+	}); 
 });
 
 $('#clickeevee').click(function(){
@@ -155,9 +154,22 @@ $('#clickabsol').click(function(){
 	});
 });
 
+
+// displays all my pokemon inside trainer Hugo in console.log
 $('#clickall').click(function(){
 	trainerHugo.displayAll()
 });
+
+
+
+});
+
+
+
+
+//NONE working codes that I was playing around with. Decided to keep them to show the different aproaches I had
+
+
 
 
 // class Child {
@@ -415,4 +427,3 @@ $('#clickall').click(function(){
  
  
 
-});
